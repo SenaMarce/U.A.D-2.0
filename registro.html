@@ -9,18 +9,18 @@
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #b3b0b0;
-        }
+            background-image: url('C:/Users/Marcela/Desktop/medio.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;          }
 
         .container {
-            width:200%;
-            max-width: 450px;
-            margin: 80px auto;
+            width:150%;
+            max-width: 300px;
+            margin: 70px auto;
             background: rgb(252, 251, 251);
             border-radius: 40px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             float: center
         }
 
@@ -84,8 +84,6 @@
             justify-content: center;
         }
       
-
-
         .form-button button {
             padding: 5px 10px;
             border: none;
@@ -121,102 +119,50 @@
       
     </style>
 </head>
+<div class="enlace">
+    <a href="https://www.bing.com", target="_blank">Inicio</a> |
+        </div>
 <body>
     <div class="container">
         <div class="logo">
             <img src="C:/Users/Marcela/Desktop/Logo1.png" alt="Logo de la empresa">
                    </div>
-        <p style="font-size: medium; text-align: center; color:#0a5c92">CREAR UNA NUEVA CUENTA</p>
-        <p style="font-size:little ; text-align: center; color:#941a7e">Si ya estas registrado. Ingresa AQUI</p>
+        <h1 style="font-size:large; text-align: center; color:#0a5c92">CREAR UNA NUEVA CUENTA</h1>
+        <p style="font-size:large; text-align: center; color:#941a7e">Si ya estas registrado. Ingresa AQUI</p>
         <div class="form">
             <form id="formulario" onsubmit="validar(event)">
-                <div class="form-group" id="grupo-cedula">
+                <div class="form-group" id="cedula">
                     <label for="cedula">No.Cédula</label>
                     <input type="text" id="cedula" name="cedula" placeholder="Ingresa tu # cédula">
                     <span id="error-cedula"></span>
                 </div>
 
-                <div class="form-group" id="grupo-fecha">
+                <div class="form-group" id="fecha">
                     <label for="fecha">Fecha de Nacimiento</label>
                     <input type="fecha" id="fecha" name="fecha" placeholder="Ingresa tu fecha de nacimiento">
                     <span id="error-fecha"></span>
                 </div>
 
-                <div class="form-group" id="grupo-nombre">
+                <div class="form-group" id="nombre">
                     <label for="nombre">Nombre completo</label>
                     <input type="nombre" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo">
                     <span id="error-nombre"></span>
                 </div>
 
-                <div class="form-group" id="grupo-correo">
+                <div class="form-group" id="correo">
                     <label for="grupo-correo">Correo Electrónico</label>
                     <input type="correo" id="correo" name="correo" placeholder="Ingresa tu correo">
                     <span id="error-correo"></span>
                 </div>
 
+                <div class="form-button">
 
-                <div class="form-button">                        
                 <button type="submit">Registrarse</button>  
-                
-                                  
+                                                 
                 </div>
           
             </form>
         </div>
     </div>
     <script>
-        // Función para validar el formulario
-        function validar(event) {
-            // Evitar que se envíe el formulario
-            event.preventDefault();
-            // Obtener los elementos del formulario
-            var formulario = document.getElementById("formulario");
-            var usuario = document.getElementById("usuario");
-            var password = document.getElementById("password");
-            var grupoUsuario = document.getElementById("grupo-usuario");
-            var grupoPassword = document.getElementById("grupo-password");
-            var errorUsuario = document.getElementById("error-usuario");
-            var errorPassword = document.getElementById("error-password");
-            // Variables para almacenar los estados de validación
-            var usuarioValido = false;
-            var passwordValido = false;
-            // Validar el usuario
-            if (usuario.value == "") {
-                // El usuario está vacío
-                grupoUsuario.classList.add("error");
-                errorUsuario.textContent = "El usuario no puede estar vacío.";
-            } else if (usuario.value.length < 4) {
-                // El usuario es muy corto
-                grupoUsuario.classList.add("error");
-                errorUsuario.textContent = "El usuario debe tener mínimo 4 caracteres.";
-            } else {
-                // El usuario es válido
-                grupoUsuario.classList.remove("error");
-                errorUsuario.textContent = "";
-                usuarioValido = true;
-            }
-            // Validar la contraseña
-            if (password.value == "") {
-                // La contraseña está vacía
-                grupoPassword.classList.add("error");
-                errorPassword.textContent = "La contraseña no puede estar vacía.";
-            } else if (password.value.length < 6) {
-                // La contraseña es muy corta
-                grupoPassword.classList.add("error");
-                errorPassword.textContent = "La contraseña debe tener mínimo 5 caracteres.";
-            } else {
-                // La contraseña es válida
-                grupoPassword.classList.remove("error");
-                errorPassword.textContent = "";
-                passwordValido = true;
-            }
-            // Si ambos campos son válidos, enviar el formulario
-            if (usuarioValido && passwordValido) {
-                formulario.submit();
-            }
-            
-        }
-    </script>
-
-</body>
-</html>
+        
