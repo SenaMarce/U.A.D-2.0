@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        /* Estilos CSS para la página */
+        body {
+            margin: 0;
+            background-image: url('C:/Users/Marcela/Desktop/medio.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+        }
+        .container {
+            width:100%;
+            max-width: 350px;
+            margin: 0px auto;
+            background: rgb(252, 251, 251);
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(9, 9, 225, 0.1);
+            float: center;
+            
+        }
+        .logo {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4f87ad;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .logo img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .form-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+      
+        .form-button button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background: #3b92cc;
+            color: rgb(241, 231, 231);
+            font-size: 18px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .form-button1 button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background: #b362bd;
+            color: rgb(241, 231, 231);
+            font-size: 18px;
+            cursor: pointer;
+            margin: 15px;
+        }
+            .form-button1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+          
+        .product {
+            max-width: 350px;
+            background-color: #acc1b3;
+            border-radius: 20px;
+            margin: 3rem;
+            box-shadow: 5px 5px 30px #59738d         
+              }
+        .total {
+            font-weight: bold;
+            color:#0b0864
+                      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="C:/Users/Marcela/Desktop/Logo1.png" alt="Logo de la empresa">
+                   </div
+       <div class="product">
+
+        <h1 style="font-size: large; text-align: center; color:#0a5c92">CARRITO DE COMPRAS</h1>
+        <p style="font-size: medium; text-align: center; color:#d539cf">Para pagos en línea, debe estar registrado en PSE.</p>
+        <p style="font-size: medium; text-align: center; color:#2c4257">PRODUCTOS</p>
+                        
+        <div class="product">
+            <h2>Bombillos</h2>
+            <h3>Precio: $30.000</h3>
+            <div class="form-button"> 
+            <button onclick="agregarAlCarrito(30000)">Agregar</button>
+        </div>
+    </div>
+        <div class="product">
+            <h2>Cepillos</h2>
+            <h3>Precio: $15.000</h3>
+            <div class="form-button"> 
+            <button onclick="agregarAlCarrito(15000)">Agregar</button>
+        </div>
+    </div>
+        <div class="product">
+            <h2>Panel</h2>
+            <h3>Precio: $300.000</h3>
+            <div class="form-button"> 
+            <button onclick="agregarAlCarrito(300000)">Agregar</button>
+        </div> 
+    </div>
+
+    <div class="product">
+        <div class="total">
+        TOTAL A PAGAR: <span id="total">0</span>
+        </div>
+    </div>
+    <div class="form-button1"> 
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+</div>
+
+    <script>
+        let carrito = [];
+        let total = 0;
+
+        function agregarAlCarrito(precio) {
+            carrito.push(precio);
+            total += precio;
+            document.getElementById("total").textContent = total;
+        }
+        function finalizarCompra() {
+            alert("¡Será direccionado a su Banco! Total a pagar: $" + total);
+            // Aquí podrías enviar los datos del carrito al servidor para procesar la compra
+        }
+    </script>
+</body>
+</html>
