@@ -2,129 +2,200 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro de Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de productos</title>
     <style>
-        * {
-            box-sizing: border-box;
-          
-        }
-
-        body {
+ body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #cfeceb;
-            
+            background-image: url('C:/Users/Marcela/Desktop/medio.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
         }
 
-        .container {
-            width:300%;
-            max-width: 400px;
-            margin: 0px auto;
-            background: rgb(252, 251, 251);
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(9, 9, 225, 0.1);
-            float: center;
+.container {
+    width: 80%;
+    max-width: 400px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+   
+}
+
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #100f0f;
+    margin: 10px 0;
+}
+
+p {
+    text-align: center;
+    color: #101010;
+    margin: 10px 0;
+}
+h2 {
+    text-align: center;
+    color: #e3e7e7;
+    margin: 10px 0;
+    background-color: #3b92cc;
+}
 
 
-        .logo {
-            width: 100%;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #4f87ad;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
+form {
+    border: 1px solid #031d30;
+    padding: 20px;
+    background-color: #a0b993;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(214, 51, 195, 0.1);   
+    
+}
 
-        .logo img {
-            max-width: 80%;
-            max-height: 80%;
-        }
+/* Aquí puedes poner los estilos de las preguntas y las opciones */
+.question {
+    margin: 10px 0;
+}
 
-        .form {
-            padding: 20px;
-        }
+label {
+    display: block;
+    font-weight: bold;
+    color: #ebeaf0;
+    margin: 5px 0;
+}
 
-        .form-group {
-            margin-bottom: 20px;
-            color:#5d9a84
-        }
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.option {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background-color: #b6d9f2;
+    box-shadow: 0 0 5px #830f0f;
+    cursor: pointer;
+}
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 3px solid #6734cd;
-            border-radius: 50px;
-            font-size: 18px;color:#cb16c8
-            
-         
-        }
+.option img {
+    width: 50px;
+    height: 50px;
+}
 
-        
+/* Aquí puedes poner los estilos del botón de enviar */
+#submit {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color:#3b92cc;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .form-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-      
-        .form-button button {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            background: #6d69dd;
-            color: rgb(241, 231, 231);
-            font-size: 18px;
-            cursor: pointer;
-            margin: 20px;
-        }
-             
+#submit:hover {
+    background-color: #cec106;
+} 
 
-        .form-button button:active {
-            transform: scale(0.80);
-            float: center      
-       } 
-      
-    </style>
+</style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="C:/Users/Marcela/Desktop/Logo1.png" alt="Logo de la empresa">
-                   </div>
-        <p style="font-size: medium; text-align: center; color:#0a5c92">GRACIAS POR LA COMPRA !</p>
-        <p style="font-size: little; text-align: center; color:#cb16c8">Se encuentra satisfecho con el producto recibido?</p>
-        <div class="form">
-         
-                         
-                
-
-                <div class="form-button">                        
-                <button type="submit">MUY SATISFECHO</button>  
-                        
-                                  
+        <!-- Aquí puedes poner el logo de tu producto -->
+        <img src="C:/Users/Marcela/Desktop/Logo1.png" alt="Logo" class="logo">
+        <h1>Productos Unión Activa</h1>
+        <h2>¡Gracias por su compra!</h2><h4>  Nos gustaría saber su opinión sobre los productos.</h4>
+        <form id="survey-form">
+            <!-- Aquí puedes poner las preguntas que quieras hacer -->
+            <div class="question">
+                <label for="q1">¿El producto fué entregado a tiempo?</label>
+        
+                <div class="options">
+                    <!-- Aquí puedes poner los botones con las caritas -->
+                    <button type="button" id="q1-1" class="option"><img src="C:/Users/Marcela/Desktop/C1.png"alt="Muy satisfecho"></button>
+                    <button type="button" id="q1-2" class="option"><img src="C:/Users/Marcela/Desktop/C2.png"alt="satisfecho"></button>
+                    <button type="button" id="q1-3" class="option"><img src="C:/Users/Marcela/Desktop/C3.png"alt="poco satisfecho"></button>
                 </div>
+            </div>
+            <div class="question">
+                <label for="q2">¿El producto llegó completo sin averías ?</label>
+                <div class="options">
+                    <button type="button" id="q2-1" class="option"><img src="C:/Users/Marcela/Desktop/C1.png"alt="Muy satisfecho"></button>
+                    <button type="button" id="q2-2" class="option"><img src="C:/Users/Marcela/Desktop/C2.png"alt="satisfecho"></button>
+                    <button type="button" id="q2-3" class="option"><img src="C:/Users/Marcela/Desktop/C3.png"alt="poco satisfecho"></button>
+                </div>
+            </div>
+            <div class="question">
+                <label for="q3">¿Recomendaría nuestros productos?</label>
+                <div class="options">
+                    <button type="button" id="q3-1" class="option"><img src="C:/Users/Marcela/Desktop/C1.png" alt="Muy satisfecho"></button>
+                    <button type="button" id="q3-2" class="option"><img src="C:/Users/Marcela/Desktop/C2.png"alt="satisfecho"></button>
+                    <button type="button" id="q3-3" class="option"><img src="C:/Users/Marcela/Desktop/C3.png"alt="poco satisfecho"></button>
+                </div>
+            </div>
+            <!-- Aquí puedes poner un botón para enviar la encuesta -->
+            <button type="submit" id="submit">Enviar encuesta</button>
+        </form>
+    </div>
+    <script>
 
-                <div class="form-button">                        
-                    <button type="submit">SATISFECHO</button>  
-                            
-                                      
-                    </div>
 
-                    <div class="form-button">                        
-                        <button type="submit">POCO SATISFECHO</button>  
-                                
-                                          
-                        </div>
 
-                        <p style="font-size: little; text-align: center; color:#cb16c8">Gracias por su opinión, la tendremos en cuenta para mejorar cada día.</p>
+    const form = document.getElementById("survey-form");
+    const submit = document.getElementById("submit");
+    const options = document.querySelectorAll(".option");
+    
+    // Aquí puedes crear una variable para guardar las respuestas del usuario
+    let answers = {};
+    
+    // Aquí puedes crear una función para manejar el evento de clic en los botones de las opciones
+    function handleOptionClick(event) {
+        // Aquí puedes obtener el id del botón que se ha pulsado
+        let id = event.target.id;
+        // Aquí puedes obtener la pregunta y la respuesta a partir del id
+        let question = id.slice(0, 2);
+        let answer = id.slice(3);
+        // Aquí puedes guardar la respuesta en la variable answers usando la pregunta como clave
+        answers[question] = answer;
+       
+        event.target.style.backgroundColor = "#ccc";
+        // Aquí puedes recorrer los demás botones de la misma pregunta y cambiar su color de fondo a blanco para indicar que no están seleccionados
+        for (let option of options) {
+            if (option.id.startsWith(question) && option.id !== id) {
+                option.style.backgroundColor = "#fff";
+ // Aquí puedes cambiar el color de fondo del botón que se ha pulsado para indicar que está seleccionado            }
+       color =answers }
+    }
+    
+    // Aquí puedes crear una función para manejar el evento de enviar el formulario
+    function handleFormSubmit(event) {
+        // Aquí puedes evitar que el formulario se envíe de forma predeterminada
+        event.preventDefault();
+        // Aquí puedes comprobar si el usuario ha respondido a todas las preguntas
+        if (Object.keys(answers).length === 3) {
+            // Aquí puedes mostrar un mensaje de agradecimiento al usuario
+            alert("Gracias por completar la encuesta. Tu opinión es muy importante para nosotros.");
+            // Aquí puedes enviar las respuestas del usuario a un servidor o a una base de datos usando una API o una petición HTTP
+            // Por ejemplo, puedes usar fetch para hacer una petición POST con las respuestas en el cuerpo
+            // fetch("https://example.com/api/survey", {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify(answers)
+            // })
+            // .then(response => response.json())
+            // .then(data => console.log(data))
+            // .catch(error => console.error(error));
+            //
+        </script>
 
-                      </form>
-      
+</body>
+</html>
